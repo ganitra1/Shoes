@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/app2.css" />
+  </head>
+
+  <body>
+    <h1>Shoes Index Page</h1>
+<h2>
+    <nav>
+      <a href="/shoes/new">Let's Add Some New Shoes!!</a>
+    </nav>
+
+      <ul>
+        <% for(let i=0; i<shoes.length; i++) { %>
+        <li>
+          <a href="/shoes/<%=shoes[i].id%>"> <%=shoes[i].name%> </a>
+          <!--  ADD DELETE FORM HERE-->
+          <form action="/shoes/<%=shoes[i].id %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE" />
+          </form>
+          <!-- Add edit link here  -->
+          
+          <a href="/shoes/<%=shoes[i].id %>/edit">edit</a>
+        
+        </li>
+
+        
+        <% } %>
+    </h2>
+      </ul>
+  </body>
+</html>

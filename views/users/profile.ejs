@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/app2.css" /> 
+	<title><%= user.name %></title>
+</head>
+<body>
+	<h1>Welcome <%= user.name %></h1>
+	<form action="/users/<%= user.name %>?_method=put" method="post">
+		Name <input type="text" name="name" value="<%= user.name %>" id=""><br>
+		
+		Password <input type="text" name="password" value="<%= user.password %>" id=""><br>
+		<input type="submit" value="Edit profile">
+	</form>
+
+	<br>
+
+	<form action="/users/<%= user.id %>?_method=delete" method="post">
+		<input type="submit" value="Delete user">
+	</form>
+	<h3>Shoes added by you:</h3>
+    <% for (let i = 0; i < user.Shoes.length; i++){ %>
+            <li>
+               <a href="/fruits/<%=user.Shoes[i].id%>"><%=user.Fruits[i].name%></a>
+            </li>
+            <br>
+    <% } %>
+
+    <br><br>
+
+	<br>
+
+	<a href="/shoes">View All Shoes</a>
+</body>
+</html>

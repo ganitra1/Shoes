@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/app2.css" /> 
+        <title></title>
+    </head>
+    <body>
+        <h1>Shoes Glorious Shoes!!!</h1>
+        <p>
+         The <%= shoes.color%>  <%=shoes.brand %> <%=shoes.category%> are called <%=shoes.name%>.  They are for (the) <%=shoes.season%> season(s).
+    They were  added by <%=shoes.User.name%>.
+    </p>
+    <form action="/shoes/<%=shoes.id %>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE <%= shoes.name %>" />
+      </form>
+
+    </body>
+</html>    
