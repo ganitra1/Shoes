@@ -12,21 +12,30 @@ router.get("/login", (req, res) => {
 });
 
 //POST LOGIN
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
   console.log(req.body);
-  let index = users.findIndex(
-    (user) =>
-      user.username === req.body.username && user.password === req.body.password
-  );
-
-  res.redirect(`/users/profile/${index}`);
+  let user = await Users.findOne({
+    where:{
+      username:req.body.username,
+      password:req.body.password
+    }
+  
+  })
+ if (user){
+  res.redirect(`/shoes`);
+ }
+ else {
+   res.redirect(`/users/login`);
+ }
 });
 
 // POST - CREATE NEW USER FROM SIGNUP
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   console.log(req.body);
-  users.push(req.body);
-  res.redirect(`/users/profile/${users.length - 1}`);
+  const newUser= await Users.create(req.body);
+  
+  console.log(" NEWUSER", newUser)
+  res.redirect(`/shoes`);
 });
 
 
@@ -42,9 +51,7 @@ router.get("/", (req, res) => {
 });
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-
-  if (req.users.id == req.params.id) {
-    Users.findByPk(id, {
+      Users.findByPk(id, {
       include: [
         {
           model: Shoes,
@@ -55,10 +62,9 @@ router.get("/:id", (req, res) => {
       console.log(user);
       res.render("users/show.ejs", { user });
     });
-  } else {
-    res.redirect("/");
-  }
-});
+  })
+ 
+  
 
 router.put("/:id", async (req, res) => {
   const id = req.params.id;

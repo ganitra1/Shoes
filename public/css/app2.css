@@ -15,10 +15,10 @@ body{
   }
 
 form{
-  font-size: 15px;;
+  font-size: 35px;;
   margin-left: 350px;
   margin-top: -25px;
-  
+  color:greenyellow;
  
 }
   
@@ -38,11 +38,42 @@ form{
       text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
   }
-  h2{
-    color:white;
+ 
+  input[type=text] {padding:5px; border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background:honeydew;
+    }
+    input[type=text]:focus {border-color:#333; }
+    
+    input[type=submit] {padding:5px 15px; background:rgb(155, 148, 148); border:0 none;
+        cursor:pointing;
+        -webkit-border-radius: 5px;
+        border-radius: 5px; 
       
-  }
+      }
+    
+    a[href="/shoes/new"]{
+      color:white;
+      }
 
+      a[href="/users/signup"]{
+        color:white;
+        font-size: 40px;
+        }
+
+      a[href="/users/login"]{ 
+        color:white;
+        margin-left: 20px;
+        font-size: 40px;
+
+        }
+        a[href="/edit"]{ 
+          color:white;
+          margin-left: 20px;
+          font-size: 40px;
+  
+          }
 
 
 

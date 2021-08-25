@@ -1,21 +1,48 @@
 const shoes =[
     {
         name:'Favorite Runners',
-        category:'tennis shoes',
+        category:'Tennis Shoes',
         brand: "Brooks",
-        color: 'white',
-        color_2: 'pink ',
+        color: 'White',
+        color_2: 'Pink ',
         heelHeigth: '0',
-        season: "all"   
+        season: "All"   
+    },
+    {
+        name:'Chunky Heels',
+        category:'Heels',
+        brand: "Free People",
+        color: 'Tan',
+        color_2: "na" ,
+        heelHeigth: "1.5",
+        season:"Fall"   
+    },
+    {
+        name:'Beach Goer',
+        category:'Sandals',
+        brand: "Birkenstock",
+        color: 'Black',
+        color_2: "na" ,
+        heelHeigth: "na",
+        season:"Summer"   
     },
     {
         name:'Favorite Boots',
-        category:'boots',
+        category:'Boots',
         brand: "Frye",
-        color: 'grey',
+        color: 'Grey',
         color_2: "na" ,
         heelHeigth: "1",
-        season:"fall"   
-    }
+        season:"Fall"   
+    },
+    {
+        name:'Snow Boots',
+        category:'boots',
+        brand: "Sorel",
+        color: 'Grey',
+        color_2: "Black" ,
+        heelHeigth: "1",
+        season:"Winter"   
+    },
 ];
 module.exports = shoes;
