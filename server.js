@@ -22,6 +22,6 @@ app.get("/", (req, res) => {
 app.use("/shoes", require("./controllers/shoesController.js"));
 app.use("/users", require("./controllers/usersController.js"));
 
-app.listen(2000,() => {
+app.listen(process.env.PORT,() => {
   console.log("I am listening");
 });
